@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Media Pembelajaran Berbasis AI untuk Kelas VI Fase C - Detektif Lingkungan: Misi Sungai Bersih (IPAS & Bahasa Indonesia)">
+  <title>Detektif Lingkungan: Misi Sungai Bersih | Media Pembelajaran AI Kelas 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-avatar">
+          <img src="assets/mascot_tirta.jpg" alt="Detektif Tirta" class="mascot-thumb" id="mascot-img-nav">
+        </div>
+        <div class="brand-text">
+          <div class="brand-badge">FASE C • KELAS VI SD</div>
+          <h1 class="brand-title">Detektif Lingkungan</h1>
+          <span class="brand-subtitle">Misi Sungai Bersih</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-btn active" data-tab="tab-dashboard" id="btn-tab-dashboard" role="tab">
+          <span class="nav-icon">🧭</span> Markas Misi
+        </button>
+        <button class="nav-btn" data-tab="tab-misi1" id="btn-tab-misi1" role="tab">
+          <span class="nav-icon">🔍</span> Misi 1: Masalah
+        </button>
+        <button class="nav-btn" data-tab="tab-misi2" id="btn-tab-misi2" role="tab">
+          <span class="nav-icon">💡</span> Misi 2: Solusi
+        </button>
+        <button class="nav-btn" data-tab="tab-misi3" id="btn-tab-misi3" role="tab">
+          <span class="nav-icon">📢</span> Misi 3: Kampanye
+        </button>
+        <button class="nav-btn" data-tab="tab-kuis" id="btn-tab-kuis" role="tab">
+          <span class="nav-icon">🏆</span> Kuis Detektif
+        </button>
+        <button class="nav-btn" data-tab="tab-guru" id="btn-tab-guru" role="tab">
+          <span class="nav-icon">📋</span> Panduan Guru & Cetak
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <div class="team-badge-pill" id="active-team-pill">
+          <span class="pill-dot"></span>
+          <span id="active-team-name">Pilih Tim</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-main">
+
+    <!-- ==================== TAB 1: MARKAS MISI / DASHBOARD ==================== -->
+    <section class="tab-pane active" id="tab-dashboard">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <div class="badge-role">🕵️‍♂️ Penyelidikan Ilmiah Berbasis AI</div>
+          <h2 class="hero-heading">Selamat Datang di Markas Detektif Sungai!</h2>
+          <p class="hero-desc">
+            Sungai di sekitar kita sedang dalam bahaya! Sampah plastik dan limbah mengancam kehidupan ikan, tanaman air, serta kesehatan warga. 
+            Bersama <strong>Detektif Tirta</strong> dan bantuan kecerdasan buatan (AI), mari kita selidiki buktinya, rancang solusi kreatif, dan ajak semua orang peduli!
+          </p>
+          
+          <!-- Form Registrasi Nama Detektif Kustom & Tim -->
+          <div class="detective-id-builder" id="detective-builder-box">
+            <div class="builder-header">
+              <span class="builder-badge">🎖️ TANDA PENGENAL DETEKTIF</span>
+              <h3 class="builder-title">Buat Identitas Detektifmu!</h3>
+              <p class="builder-desc">Setiap penyelidik cilik berhak memiliki nama detektif dan lencana resmi kebanggaannya sendiri.</p>
+            </div>
+
+            <div class="builder-form-grid">
+              <div class="form-group-custom">
+                <label for="input-detective-name" class="label-custom">
+                  🕵️‍♂️ <strong>Nama Detektifmu:</strong>
+                </label>
+                <div class="input-with-icon">
+                  <input type="text" id="input-detective-name" class="form-input custom-detective-input" placeholder="Ketik nama detektifmu (contoh: Detektif Budi / Detektif Alya)" value="Detektif Cilik">
+                </div>
+                <small class="hint-text">Bebas! Kamu bisa pakai nama panggilan, nama keren, atau nama kesukaanmu.</small>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="select-team" class="label-custom">
+                  🛡️ <strong>Regu / Tim Penyelidik:</strong>
+                </label>
+                <select id="select-team" class="custom-select form-input">
+                  <option value="Tim Elang Air">🦅 Tim Elang Air (Kelompok 1)</option>
+                  <option value="Tim Arwana Hijau">🐟 Tim Arwana Hijau (Kelompok 2)</option>
+                  <option value="Tim Berang-Berang Cerdas">🦦 Tim Berang Cerdas (Kelompok 3)</option>
+                  <option value="Tim Teratai Bersih">🪷 Tim Teratai Bersih (Kelompok 4)</option>
+                  <option value="Tim Lumba Sungai">🐬 Tim Lumba Sungai (Kelompok 5)</option>
+                  <option value="Tim Detektif Mandiri">⭐ Tim Detektif Mandiri</option>
+                </select>
+              </div>
+
+              <div class="form-group-custom">
+                <label class="label-custom">
+                  🎨 <strong>Pilih Simbol Avatar Detektif:</strong>
+                </label>
+                <div class="avatar-picker" id="avatar-picker-group">
+                  <button type="button" class="avatar-opt-btn active" data-avatar="🕵️‍♂️" title="Detektif Putra">🕵️‍♂️</button>
+                  <button type="button" class="avatar-opt-btn" data-avatar="🕵️‍♀️" title="Detektif Putri">🕵️‍♀️</button>
+                  <button type="button" class="avatar-opt-btn" data-avatar="🦦" title="Berang Tirta">🦦</button>
+                  <button type="button" class="avatar-opt-btn" data-avatar="🦅" title="Elang Pengawas">🦅</button>
+                  <button type="button" class="avatar-opt-btn" data-avatar="🐬" title="Lumba Air">🐬</button>
+                  <button type="button" class="avatar-opt-btn" data-avatar="🌿" title="Penjaga Teratai">🌿</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-action-row">
+              <button class="btn btn-warning btn-lg" id="btn-confirm-team">
+                🎖️ Aktifkan Lencana Detektifku! 🚀
+              </button>
+            </div>
+          </div>
+
+          <!-- Kartu Lencana Detektif Resmi (Aktif Setelah Konfirmasi) -->
+          <div class="detective-badge-card" id="detective-badge-display" style="display: none;">
+            <div class="badge-lanyard-hole"></div>
+            <div class="badge-card-inner">
+              <div class="badge-card-header">
+                <span class="badge-org">BADAN PENYELIDIK LINGKUNGAN FASE C</span>
+                <span class="badge-level">LEVEL: DETEKTIF RESMI</span>
+              </div>
+              <div class="badge-card-body">
+                <div class="badge-avatar-frame">
+                  <span id="badge-display-avatar" class="badge-avatar-big">🕵️‍♂️</span>
+                  <div class="badge-verified-seal">✓ RESMI</div>
+                </div>
+                <div class="badge-meta-info">
+                  <span class="meta-label">NAMA DETEKTIF:</span>
+                  <h3 class="badge-detective-name" id="badge-display-name">Detektif Cilik</h3>
+                  
+                  <span class="meta-label">REGU PENYELIDIK:</span>
+                  <p class="badge-detective-team" id="badge-display-team">🦅 Tim Elang Air</p>
+                  
+                  <div class="badge-rank-pill">
+                    ⭐ Detektif Pelindung Sungai Fase C
+                  </div>
+                </div>
+              </div>
+              <div class="badge-card-footer">
+                <span class="badge-serial" id="badge-display-serial">ID: DT-2026-081</span>
+                <button class="btn btn-sm btn-outline-white" id="btn-edit-detective" onclick="editDetectiveIdentity()">
+                  ✏️ Ubah Nama / Tim
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-mascot-card">
+          <img src="assets/mascot_tirta.jpg" alt="Maskot Detektif Tirta" class="hero-mascot-img">
+          <div class="mascot-speech-bubble">
+            <strong id="mascot-greeting-title">Halo Rekan Detektif!</strong>
+            <p id="mascot-greeting-desc">"Ingat semboyan kita: <em>Teliti buktinya, tanya AI dengan cerdas, lalu uji kebenarannya bersama tim!</em>"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alur 3 Misi Pembelajaran -->
+      <div class="section-title-wrap">
+        <h3 class="section-title">Peta Misi Penyelidikan Lingkungan</h3>
+        <p class="section-subtitle">Selesaikan 3 Misi Utama untuk meraih Lencana Detektif Lingkungan Bintang 5</p>
+      </div>
+
+      <div class="mission-grid">
+        <!-- Card Misi 1 -->
+        <div class="mission-card" id="mcard-1">
+          <div class="mission-card-badge">PERTEMUAN 1 • 2-3 JP</div>
+          <div class="mission-icon">🔍</div>
+          <h4 class="mission-title">Misi 1: Temukan Masalah</h4>
+          <p class="mission-focus"><strong>Fokus:</strong> Mengamati, Mempertanyakan, & Analisis Bukti AI.</p>
+          <ul class="mission-points">
+            <li>Analisis perbandingan Sungai Tercemar vs Sungai Bersih</li>
+            <li>Investigasi 4 Kartu Kasus & Dampak Rantai Makanan</li>
+            <li>Tanya AI "Asisten Peneliti" & Verifikasi Fakta</li>
+          </ul>
+          <div class="mission-footer">
+            <span class="status-tag" id="status-m1">Belum Selesai</span>
+            <button class="btn btn-outline" onclick="switchTab('tab-misi1')">Mulai Misi 1 ➔</button>
+          </div>
+        </div>
+
+        <!-- Card Misi 2 -->
+        <div class="mission-card" id="mcard-2">
+          <div class="mission-card-badge">PERTEMUAN 2 • 2-3 JP</div>
+          <div class="mission-icon">💡</div>
+          <h4 class="mission-title">Misi 2: Rancang Solusi</h4>
+          <p class="mission-focus"><strong>Fokus:</strong> Merencanakan, Brainstorming AI, & Pemrosesan Data.</p>
+          <ul class="mission-points">
+            <li>Menyusun Diagram Sebab-Akibat (Fishbone Diagram)</li>
+            <li>Brainstorming Ide Kampanye bersama AI Peneliti</li>
+            <li>Memilah, menyaring, dan memilih solusi aksi nyata</li>
+          </ul>
+          <div class="mission-footer">
+            <span class="status-tag" id="status-m2">Terkunci</span>
+            <button class="btn btn-outline" onclick="switchTab('tab-misi2')">Buka Misi 2 ➔</button>
+          </div>
+        </div>
+
+        <!-- Card Misi 3 -->
+        <div class="mission-card" id="mcard-3">
+          <div class="mission-card-badge">PERTEMUAN 3 • 2-3 JP</div>
+          <div class="mission-icon">📢</div>
+          <h4 class="mission-title">Misi 3: Kampanye Detektif</h4>
+          <p class="mission-focus"><strong>Fokus:</strong> Mengomunikasikan, Mengkreasi Poster/Video, & Refleksi.</p>
+          <ul class="mission-points">
+            <li>Membuat Desain Poster Digital Kampanye Sungai</li>
+            <li>Latihan Presentasi & Gelar Karya antar kelompok</li>
+            <li>Asesmen Sejawat & Refleksi Kritis Penggunaan AI</li>
+          </ul>
+          <div class="mission-footer">
+            <span class="status-tag" id="status-m3">Terkunci</span>
+            <button class="btn btn-outline" onclick="switchTab('tab-misi3')">Buka Misi 3 ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats / Detective Checklist -->
+      <div class="checklist-box">
+        <div class="checklist-header">
+          <h4>🌟 Buku Catatan Detektif Tirta</h4>
+          <span class="progress-percent" id="overall-progress-text">Progres: 0% Selesai</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="overall-progress-bar" style="width: 5%;"></div>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item"><input type="checkbox" id="chk-obs"> <span>Mengamati fenomena sungai tercemar & menemukan 3 pertanyaan</span></label>
+          <label class="check-item"><input type="checkbox" id="chk-clue"> <span>Memeriksa 4 kartu petunjuk bukti pencemaran</span></label>
+          <label class="check-item"><input type="checkbox" id="chk-ai"> <span>Menguji & memverifikasi jawaban AI dengan buku siswa</span></label>
+          <label class="check-item"><input type="checkbox" id="chk-sol"> <span>Merumuskan solusi kampanye kreatif bersama tim</span></label>
+          <label class="check-item"><input type="checkbox" id="chk-prod"> <span>Mempublikasikan poster kampanye & mengisi rubrik evaluasi</span></label>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 2: MISI 1 (TEMUKAN MASALAH) ==================== -->
+    <section class="tab-pane" id="tab-misi1">
+      <div class="pane-header">
+        <div class="pane-badge">MISI 1 • MENGAMATI & MEMPERTANYAKAN</div>
+        <h2>Misi 1: Menyelidiki Kasus Sungai Tercemar</h2>
+        <p>Amati laboratorium bukti visual, baca kartu petunjuk kasus, dan ajukan pertanyaan kritis ke AI Asisten Peneliti.</p>
+      </div>
+
+      <!-- Visual Lab: Sungai Tercemar vs Bersih -->
+      <div class="investigation-box">
+        <div class="box-title-row">
+          <div class="box-tag">BUKTI FOTO LAPANGAN #01</div>
+          <h3>Perbandingan Nyata: Sungai Tercemar vs Sungai Bersih</h3>
+          <div class="audio-narration-control">
+            <button class="btn btn-sm btn-audio" id="btn-audio-m1" onclick="playAudioNarration('narration-m1')">
+              🔊 Dengarkan Penjelasan Detektif Tirta
+            </button>
+          </div>
+        </div>
+
+        <div class="comparison-container">
+          <div class="comparison-image-wrapper">
+            <img src="assets/sungai_komparasi.jpg" alt="Komparasi Sungai Tercemar vs Sungai Bersih" class="comparison-img">
+            <div class="hotspot hotspot-polluted" title="Zona Tercemar: Banyak botol plastik, air hitam keruh, ikan megap-megap kekurangan oksigen" onclick="showHotspotInfo('polluted')">
+              ⚠️ Zona Bahaya
+            </div>
+            <div class="hotspot hotspot-clean" title="Zona Bersih: Air jernih beroksigen tinggi, teratai mekar, ikan lincah berenang" onclick="showHotspotInfo('clean')">
+              🌿 Zona Alami
+            </div>
+          </div>
+          
+          <div class="comparison-details" id="hotspot-detail-box">
+            <h4 id="detail-title">💡 Petunjuk Pengamatan Detektif:</h4>
+            <p id="detail-desc">Klik tombol <strong>⚠️ Zona Bahaya</strong> atau <strong>🌿 Zona Alami</strong> pada gambar di atas untuk melihat analisis mikroskopis dari Detektif Tirta.</p>
+            <div class="fact-chips">
+              <span class="chip">🔍 IPAS: Rantai Makanan & Ekosistem</span>
+              <span class="chip">📝 B. Indonesia: Fakta vs Opini</span>
+              <span class="chip">⏳ Waktu: 20 Menit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu Petunjuk Kasus (Interaktif LKPD 1) -->
+      <div class="clue-section">
+        <h3 class="subheading">🗂️ Berkas Rahasia: 4 Kartu Petunjuk Kasus</h3>
+        <p class="subtext">Buka setiap amplop kartu untuk mengumpulkan bukti penyelidikan kelompokmu.</p>
+
+        <div class="clue-cards-grid">
+          <!-- Kartu 1 -->
+          <div class="clue-card" onclick="toggleCard(this)">
+            <div class="clue-card-front">
+              <span class="clue-num">KARTU BUKTI #01</span>
+              <h4>Kantong & Botol Plastik Sekali Pakai</h4>
+              <p class="clue-peek">Ditemukan ratusan botol plastik menyumbat gorong-gorong hilir sungai...</p>
+              <span class="clue-action">Klik untuk Buka Amplop 📂</span>
+            </div>
+            <div class="clue-card-back">
+              <h4>Temuan Fakta Laboratorium:</h4>
+              <p>Plastik butuh <strong>100 - 500 tahun</strong> untuk terurai. Di air, plastik terpecah oleh matahari menjadi butiran sangat kecil bernama <em>mikroplastik</em> yang tertelan ikan kecil.</p>
+              <div class="clue-question">
+                <strong>Pertanyaan Detektif:</strong> Apa yang terjadi jika ikan yang memakan mikroplastik ditangkap lalu dimakan manusia?
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu 2 -->
+          <div class="clue-card" onclick="toggleCard(this)">
+            <div class="clue-card-front">
+              <span class="clue-num">KARTU BUKTI #02</span>
+              <h4>Busa Detergen & Limbah Cuci Rumah Tangga</h4>
+              <p class="clue-peek">Permukaan air berbusa tebal putih berbau menyengat dekat pemukiman...</p>
+              <span class="clue-action">Klik untuk Buka Amplop 📂</span>
+            </div>
+            <div class="clue-card-back">
+              <h4>Temuan Fakta Laboratorium:</h4>
+              <p>Limbah detergen mengandung <strong>fosfat</strong> tinggi. Ini memicu ledakan eceng gondok liar (eutrofikasi) yang menutupi sinar matahari dan menyedot oksigen air hingga ikan mati lemas.</p>
+              <div class="clue-question">
+                <strong>Pertanyaan Detektif:</strong> Mengapa tumbuhan di dasar sungai mati saat permukaan tertutup tanaman liar & busa?
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu 3 -->
+          <div class="clue-card" onclick="toggleCard(this)">
+            <div class="clue-card-front">
+              <span class="clue-num">KARTU BUKTI #03</span>
+              <h4>Bangkai Ikan & Hilangnya Capung Sungai</h4>
+              <p class="clue-peek">Warga melaporkan capung dan berang-berang sudah tidak pernah terlihat lagi...</p>
+              <span class="clue-action">Klik untuk Buka Amplop 📂</span>
+            </div>
+            <div class="clue-card-back">
+              <h4>Temuan Fakta Laboratorium:</h4>
+              <p>Capung dan larva serangga air adalah <strong>bioindikator alami</strong>. Mereka hanya mau bertelur di air bersih beroksigen. Ketiadaan capung adalah tanda pasti air tercemar racun kimiawi!</p>
+              <div class="clue-question">
+                <strong>Pertanyaan Detektif:</strong> Siapakah pemangsa berikutnya yang kelaparan saat ikan kecil mati?
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu 4 -->
+          <div class="clue-card" onclick="toggleCard(this)">
+            <div class="clue-card-front">
+              <span class="clue-num">KARTU BUKTI #04</span>
+              <h4>Bahaya Banjir & Wabah Penyakit Warga</h4>
+              <p class="clue-peek">Anak-anak di bantaran sungai mengalami gatal kulit dan diare setelah banjir...</p>
+              <span class="clue-action">Klik untuk Buka Amplop 📂</span>
+            </div>
+            <div class="clue-card-back">
+              <h4>Temuan Fakta Laboratorium:</h4>
+              <p>Endapan sampah mendangkalkan dasar sungai (sedimentasi) hingga daya tampung air turun 70%. Air tergenang menjadi sarang bakteri <em>E. coli</em> dan nyamuk demam berdarah.</p>
+              <div class="clue-question">
+                <strong>Pertanyaan Detektif:</strong> Hubungkan kebiasaan buang sampah sembarangan dengan biaya rumah sakit warga!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ruang Diskusi Tanya AI Asisten Peneliti (Dipandu Guru) -->
+      <div class="ai-assistant-station">
+        <div class="ai-station-header">
+          <div class="ai-avatar-badge">
+            <img src="assets/mascot_tirta.jpg" alt="AI Detektif Tirta" class="ai-circle-img">
+            <div>
+              <h4>AI Asisten Peneliti (Detektif Tirta GPT)</h4>
+              <span class="ai-status-indicator">🟢 Mode Mitra Berpikir Guru & Siswa Siap</span>
+            </div>
+          </div>
+          <span class="critical-alert-tag">⚠️ Aturan Detektif: Uji & Verifikasi, Jangan Ditelan Mentah!</span>
+        </div>
+
+        <div class="ai-chat-interface">
+          <div class="ai-preset-queries">
+            <span class="preset-label">💡 Coba Ajukan Pertanyaan Penyelidikan Cepat:</span>
+            <div class="query-chips">
+              <button class="q-chip" onclick="askAiPreset('bagaimana_plastik_jadi_mikroplastik')">Bagaimana plastik berubah jadi mikroplastik?</button>
+              <button class="q-chip" onclick="askAiPreset('dampak_detergen_ikan')">Apa dampak busa detergen bagi insang ikan?</button>
+              <button class="q-chip" onclick="askAiPreset('kenapa_capung_hilang')">Mengapa capung lenyap saat air tercemar?</button>
+              <button class="q-chip" onclick="askAiPreset('ide_daur_ulang')">Bagaimana cara mencegah sampah masuk sungai?</button>
+            </div>
+          </div>
+
+          <div class="chat-display" id="ai-chat-box">
+            <div class="chat-bubble bubble-assistant">
+              <strong>Detektif Tirta AI:</strong>
+              <p>Halo detektif cilik! Aku adalah Asisten Peneliti bertenaga AI. Silakan pilih salah satu pertanyaan di atas, atau ketik pertanyaan kelompokmu di bawah ini. Guru dan timmu wajib memverifikasi apakah jawabanku cocok dengan buku materi!</p>
+            </div>
+          </div>
+
+          <div class="chat-input-row">
+            <input type="text" id="ai-user-query" class="chat-input" placeholder="Ketik pertanyaan penyelidikan kelompokmu di sini...">
+            <button class="btn btn-primary" id="btn-submit-ai" onclick="submitCustomAiQuery()">Tanya AI 🤖</button>
+          </div>
+
+          <!-- Fitur Verifikasi Kritis -->
+          <div class="verification-box" id="verification-panel" style="display: none;">
+            <div class="v-header">
+              <span>🕵️‍♀️ Tantangan Berpikir Kritis Siswa:</span>
+              <strong>Uji Jawaban AI dengan Buku Siswa & Akal Sehat</strong>
+            </div>
+            <p class="v-instruction">Apakah jawaban AI di atas masuk akal dan sesuai fakta ilmiah? Centang bukti yang sudah kalian periksa:</p>
+            <div class="v-checks">
+              <label><input type="checkbox" id="vchk-1"> Fakta ilmiah sesuai dengan materi IPAS Bab Ekosistem</label>
+              <label><input type="checkbox" id="vchk-2"> Bahasa mudah dipahami dan tidak ada istilah palsu</label>
+              <label><input type="checkbox" id="vchk-3"> Tim kami menemukan informasi tambahan dari buku pegangan</label>
+            </div>
+            <button class="btn btn-sm btn-success" id="btn-verify-done" onclick="completeVerification()">✅ Konfirmasi Verifikasi Fakta Selesai (+100 Poin Nalar Kritis)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 3: MISI 2 (RANCANG SOLUSI) ==================== -->
+    <section class="tab-pane" id="tab-misi2">
+      <div class="pane-header">
+        <div class="pane-badge">MISI 2 • MERENCANAKAN & MEMPROSES DATA</div>
+        <h2>Misi 2: Rancang Solusi Nyata & Rantai Penyelamatan</h2>
+        <p>Petakan akar masalah dengan Diagram Tulang Ikan (Fishbone), lalu gunakan AI untuk brainstorming kampanye kreatif ramah anak.</p>
+      </div>
+
+      <!-- Diagram Sebab-Akibat / Fishbone Interaktif -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <span class="tool-tag">ALAT BERPIKIR ILMIAH</span>
+          <h3>1. Diagram Tulang Ikan Sebab-Akibat (Fishbone Diagram)</h3>
+          <p>Klik setiap cabang tulang untuk mengungkap akar penyebab utama pencemaran sungai:</p>
+        </div>
+
+        <div class="fishbone-diagram">
+          <div class="fish-head">
+            <span class="fish-icon">🐟☠️</span>
+            <strong>DAMPAK:<br>Sungai Rusak & Ikan Mati</strong>
+          </div>
+          <div class="fish-spine">
+            <!-- Tulang Atas 1: Manusia / Kebiasaan -->
+            <div class="bone-branch bone-top-1" onclick="openBoneModal('manusia')">
+              <div class="bone-line"></div>
+              <div class="bone-label">👤 Kebiasaan Manusia</div>
+            </div>
+            <!-- Tulang Atas 2: Limbah Rumah Tangga -->
+            <div class="bone-branch bone-top-2" onclick="openBoneModal('limbah')">
+              <div class="bone-line"></div>
+              <div class="bone-label">🧴 Limbah Domestik</div>
+            </div>
+            <!-- Tulang Bawah 1: Kurang Fasilitas -->
+            <div class="bone-branch bone-bottom-1" onclick="openBoneModal('fasilitas')">
+              <div class="bone-line"></div>
+              <div class="bone-label">🗑️ Minimnya Tempat Sampah</div>
+            </div>
+            <!-- Tulang Bawah 2: Aliran Tersumbat -->
+            <div class="bone-branch bone-bottom-2" onclick="openBoneModal('aliran')">
+              <div class="bone-line"></div>
+              <div class="bone-label">🌊 Pendangkalan Sungai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bone-explanation-box" id="bone-desc-box">
+          <p><em>Klik salah satu tulang di atas untuk mempelajari analisis mendalam serta ide intervensi solusinya.</em></p>
+        </div>
+      </div>
+
+      <!-- Interaktif Rantai Makanan Terdampak -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <span class="tool-tag">EKOSISTEM AIR TAWAR</span>
+          <h3>2. Rantai Makanan yang Terputus Akibat Sampah</h3>
+          <p>Perhatikan aliran energi dan bahaya biomagnifikasi (racun yang menumpuk di tubuh predator):</p>
+        </div>
+
+        <div class="food-chain-interactive">
+          <div class="chain-step">
+            <div class="step-circle">🌱</div>
+            <strong>Fitoplankton / Ganggang</strong>
+            <small>Menyerap mikroplastik & logam berat beracun</small>
+          </div>
+          <div class="chain-arrow">➔</div>
+          <div class="chain-step">
+            <div class="step-circle">🦐</div>
+            <strong>Udang & Ikan Kecil</strong>
+            <small>Memakan ganggang, racun tersimpan di jaringan lemak</small>
+          </div>
+          <div class="chain-arrow">➔</div>
+          <div class="chain-step">
+            <div class="step-circle">🐟</div>
+            <strong>Ikan Gabus / Mujair</strong>
+            <small>Memakan ratusan ikan kecil, racun berlipat ganda!</small>
+          </div>
+          <div class="chain-arrow">➔</div>
+          <div class="chain-step alert-step">
+            <div class="step-circle">🧍</div>
+            <strong>Manusia / Warga</strong>
+            <small>Mengonsumsi ikan beracun: risiko gangguan pencernaan & saraf</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Brainstorming Partner: Kampanye Hemat Sampah -->
+      <div class="ai-brainstorm-box">
+        <div class="box-title-row">
+          <div>
+            <div class="box-tag">BRAINSTORMING AI DIPANDU GURU</div>
+            <h3>3. Generator Ide Kampanye Cerdas</h3>
+            <p>Minta AI memberi 5 ide kampanye. Ingat: <strong>Pilihlah dengan kritis, modifikasi, atau tolak yang tidak realistis!</strong></p>
+          </div>
+          <button class="btn btn-warning" onclick="generateCampaignIdeas()">⚡ Minta 5 Ide dari AI</button>
+        </div>
+
+        <div class="ideas-display-grid" id="ideas-container">
+          <div class="empty-state">
+            Klik tombol kuning <strong>"⚡ Minta 5 Ide dari AI"</strong> untuk memulai sesi curah gagasan (brainstorming).
+          </div>
+        </div>
+
+        <div class="selection-summary-card" id="solution-summary" style="display: none;">
+          <h4>🎯 Rancangan Solusi Terpilih Kelompok:</h4>
+          <div class="form-group">
+            <label for="chosen-idea-title"><strong>Judul Inovasi Solusi:</strong></label>
+            <input type="text" id="chosen-idea-title" class="form-input" placeholder="Contoh: Operasi Semut & Duta Botol Minum Ramah Lingkungan">
+          </div>
+          <div class="form-group">
+            <label for="chosen-idea-desc"><strong>Alasan Memilih & Cara Melakukannya di Sekolah:</strong></label>
+            <textarea id="chosen-idea-desc" class="form-textarea" rows="3" placeholder="Mengapa ide ini cocok untuk anak kelas 6 dan tidak membutuhkan biaya mahal? Jelaskan langkah praktisnya..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="saveSolutionDraft()">💾 Simpan Rencana Solusi ke Lembar Misi 2</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 4: MISI 3 (KAMPANYE DETEKTIF) ==================== -->
+    <section class="tab-pane" id="tab-misi3">
+      <div class="pane-header">
+        <div class="pane-badge">MISI 3 • MENGOMUNIKASIKAN & MENGEVALUASI</div>
+        <h2>Misi 3: Gelar Karya & Kampanye Penyelamatan Sungai</h2>
+        <p>Rancang poster kampanye digital, siapkan orasi/video pendek 60 detik, dan lakukan penilaian sejawat.</p>
+      </div>
+
+      <div class="campaign-workspace">
+        <!-- Canvas Pembuat Poster Digital Mini -->
+        <div class="poster-creator-card">
+          <div class="creator-header">
+            <h3>🎨 Studio Desain Poster Detektif</h3>
+            <span class="subtext">Kombinasikan teks informatif, slogan memikat, dan ilustrasi lingkungan.</span>
+          </div>
+
+          <div class="poster-layout">
+            <div class="poster-canvas" id="poster-preview-box">
+              <div class="poster-badge" id="preview-badge">KAMPANYE KELAS VI SD</div>
+              <h3 class="poster-title" id="preview-title">SELAMATKAN SUNGAI KITA!</h3>
+              <p class="poster-slogan" id="preview-slogan">"Satu Sampah yang Kau Buang, Membunuh Ribuan Kehidupan Air"</p>
+              
+              <div class="poster-art-wrapper">
+                <img src="assets/sungai_komparasi.jpg" alt="Art Kampanye" class="poster-art" id="preview-art">
+              </div>
+
+              <div class="poster-action-call" id="preview-action">
+                🌿 Aksi Kita: Bawa Tumbler, Tolak Kantong Plastik, Jaga Aliran Sungai Tetap Jernih!
+              </div>
+
+              <div class="poster-signature" id="preview-team">
+                Oleh: Tim Detektif Cilik SD Negeri Harapan
+              </div>
+            </div>
+
+            <!-- Controls Form -->
+            <div class="poster-controls">
+              <div class="form-group">
+                <label>Pilih Tema Warna Poster:</label>
+                <div class="theme-color-buttons">
+                  <button class="color-btn theme-emerald active" onclick="setPosterTheme('theme-emerald')">Emerald</button>
+                  <button class="color-btn theme-ocean" onclick="setPosterTheme('theme-ocean')">Ocean Blue</button>
+                  <button class="color-btn theme-sunset" onclick="setPosterTheme('theme-sunset')">Sunset Amber</button>
+                  <button class="color-btn theme-dark" onclick="setPosterTheme('theme-dark')">Deep Detective</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="input-poster-title">Judul Utama Kampanye:</label>
+                <input type="text" id="input-poster-title" class="form-input" value="SELAMATKAN SUNGAI KITA!" oninput="updatePosterPreview()">
+              </div>
+
+              <div class="form-group">
+                <label for="input-poster-slogan">Slogan Persuasif (Bahasa Indonesia):</label>
+                <input type="text" id="input-poster-slogan" class="form-input" value="Satu Sampah yang Kau Buang, Merenggut Kehidupan Air" oninput="updatePosterPreview()">
+              </div>
+
+              <div class="form-group">
+                <label for="input-poster-action">Pesan Aksi Nyata (Solusi):</label>
+                <textarea id="input-poster-action" class="form-textarea" rows="2" oninput="updatePosterPreview()">Aksi Kita: Bawa Tumbler ke Sekolah, Jangan Buang Minyak ke Selokan, Rawat Tepian Sungai!</textarea>
+              </div>
+
+              <div class="poster-btn-group">
+                <button class="btn btn-outline" onclick="generateAiSlogan()">✨ Minta Saran Slogan AI</button>
+                <button class="btn btn-primary" onclick="printPosterOnly()">🖨️ Cetak / Unduh Poster Ini</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rubrik Penilaian Antar Kelompok (Peer Assessment) -->
+        <div class="rubric-interactive-card">
+          <div class="box-title-row">
+            <div>
+              <div class="box-tag">ASESMEN SEJAWAT (SKALA 1 - 4)</div>
+              <h3>Lembar Penilaian Gelar Karya Kelompok Lain</h3>
+              <p>Berikan umpan balik yang membangun untuk kelompok yang sedang tampil presentasi di depan kelas:</p>
+            </div>
+            <div class="target-team-select">
+              <label>Kelompok yang dinilai:</label>
+              <select id="eval-target-team" class="custom-select">
+                <option value="Kelompok 1">Kelompok 1</option>
+                <option value="Kelompok 2">Kelompok 2</option>
+                <option value="Kelompok 3">Kelompok 3</option>
+                <option value="Kelompok 4">Kelompok 4</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="rubric-table-responsive">
+            <table class="rubric-table">
+              <thead>
+                <tr>
+                  <th>Kriteria Penilaian</th>
+                  <th>Skor 1 (Perlu Bimbingan)</th>
+                  <th>Skor 2 (Cukup)</th>
+                  <th>Skor 3 (Baik)</th>
+                  <th>Skor 4 (Sangat Baik)</th>
+                  <th>Pilih Skor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ketepatan Konsep IPAS</strong><br><small>Sebab-akibat & ekosistem</small></td>
+                  <td>Banyak miskonsepsi</td>
+                  <td>Penjelasan sebab minim</td>
+                  <td>Sebab-akibat cukup tepat</td>
+                  <td>Penjelasan akurat, ilmiah, & lengkap</td>
+                  <td>
+                    <select class="score-dropdown" id="score-konsep">
+                      <option value="4">4 - Sangat Baik</option>
+                      <option value="3">3 - Baik</option>
+                      <option value="2">2 - Cukup</option>
+                      <option value="1">1 - Perlu Bimbingan</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Kreativitas Solusi</strong><br><small>Keaslian gagasan kampanye</small></td>
+                  <td>Meniru mentah AI</td>
+                  <td>Gagasan umum/biasa</td>
+                  <td>Solusi menarik & realistis</td>
+                  <td>Ide orisinal, berdampak, & unik</td>
+                  <td>
+                    <select class="score-dropdown" id="score-kreatif">
+                      <option value="4">4 - Sangat Baik</option>
+                      <option value="3">3 - Baik</option>
+                      <option value="2">2 - Cukup</option>
+                      <option value="1">1 - Perlu Bimbingan</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Pemanfaatan Multimedia</strong><br><small>Teks, gambar, audio, layout</small></td>
+                  <td>Hanya satu jenis media</td>
+                  <td>Media kurang rapi</td>
+                  <td>Media padu & jelas</td>
+                  <td>Sangat harmonis, visual WOW & memikat</td>
+                  <td>
+                    <select class="score-dropdown" id="score-media">
+                      <option value="4">4 - Sangat Baik</option>
+                      <option value="3">3 - Baik</option>
+                      <option value="2">2 - Cukup</option>
+                      <option value="1">1 - Perlu Bimbingan</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Berpikir Kritis terhadap AI</strong><br><small>Menyaring & mengoreksi AI</small></td>
+                  <td>Menerima semua saran AI</td>
+                  <td>Sedikit modifikasi</td>
+                  <td>Memilih ide dengan alasan</td>
+                  <td>Mengoreksi kekeliruan AI dengan argumen kuat</td>
+                  <td>
+                    <select class="score-dropdown" id="score-kritis">
+                      <option value="4">4 - Sangat Baik</option>
+                      <option value="3">3 - Baik</option>
+                      <option value="2">2 - Cukup</option>
+                      <option value="1">1 - Perlu Bimbingan</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Gotong Royong / Kolaborasi</strong><br><small>Kekompakan saat presentasi</small></td>
+                  <td>Hanya 1 anak bicara</td>
+                  <td>Kerjasama pasif</td>
+                  <td>Semua anggota terlibat</td>
+                  <td>Pembagian peran solid, saling melengkapi</td>
+                  <td>
+                    <select class="score-dropdown" id="score-kolab">
+                      <option value="4">4 - Sangat Baik</option>
+                      <option value="3">3 - Baik</option>
+                      <option value="2">2 - Cukup</option>
+                      <option value="1">1 - Perlu Bimbingan</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="rubric-submit-bar">
+            <div class="total-score-badge">
+              Total Skor: <strong id="calculated-total-score">20 / 20 (Nilai: 100)</strong>
+            </div>
+            <button class="btn btn-success" onclick="savePeerScore()">Kirim Penilaian Sejawat 📨</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 5: KUIS DETEKTIF (WORDWALL STYLE) ==================== -->
+    <section class="tab-pane" id="tab-kuis">
+      <div class="pane-header">
+        <div class="pane-badge">EVALUASI FORMATIF • 5 SOAL TANTANGAN</div>
+        <h2>Kuis Detektif Lingkungan</h2>
+        <p>Uji pemahaman konsep IPAS dan kecakapan Bahasa Indonesia. Dapatkan skor tertinggi untuk kelompokmu!</p>
+      </div>
+
+      <div class="quiz-container">
+        <!-- Quiz Start Screen -->
+        <div class="quiz-screen active" id="quiz-start-screen">
+          <div class="quiz-intro-box">
+            <div class="quiz-big-icon">🏆</div>
+            <h3>Tantangan Bukti Detektif Fase C</h3>
+            <p>Kuis ini terdiri dari 5 butir soal pilihan ganda bergradasi (C2 - C4). Setiap soal menguji kemampuan analitis terhadap pencemaran ekosistem sungai dan teks eksplanasi.</p>
+            
+            <div class="quiz-rules-list">
+              <div>⏱️ Timer santai 45 detik per soal</div>
+              <div>✨ Pembahasan ilmiah langsung setelah menjawab</div>
+              <div>⭐ Nilai 100 untuk Detektif Berbintang 5</div>
+            </div>
+
+            <button class="btn btn-primary btn-lg" onclick="startQuiz()">Mulai Kuis Sekarang! 🚀</button>
+          </div>
+        </div>
+
+        <!-- Quiz Question Screen -->
+        <div class="quiz-screen" id="quiz-question-screen">
+          <div class="quiz-topbar">
+            <div class="q-progress-info">
+              <span id="quiz-num-label">Soal 1 dari 5</span>
+            </div>
+            <div class="q-timer" id="quiz-timer-badge">
+              ⏳ <span id="quiz-time-left">45</span> detik
+            </div>
+            <div class="q-score-badge">
+              Skor: <span id="quiz-current-score">0</span>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-tag" id="q-category-tag">IPAS: Dampak Ekosistem</div>
+            <h3 class="question-text" id="q-text">Pertanyaan akan muncul di sini...</h3>
+            
+            <div class="options-grid" id="q-options-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="explanation-panel" id="q-explanation-box" style="display: none;">
+              <div class="exp-title" id="exp-title-text">💡 Pembahasan Ilmiah Detektif Tirta:</div>
+              <p class="exp-content" id="exp-desc-text">Penjelasan jawaban...</p>
+              <button class="btn btn-primary" id="btn-next-question" onclick="nextQuestion()">Soal Berikutnya ➔</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div class="quiz-screen" id="quiz-result-screen">
+          <div class="result-card">
+            <div class="result-badge-anim" id="result-emoji">🌟</div>
+            <h2 id="result-title">Luar Biasa, Detektif Hebat!</h2>
+            <div class="result-score-large" id="result-final-score">100 / 100</div>
+            <p class="result-feedback" id="result-feedback-text">Kelompokmu membuktikan nalar kritis tingkat tinggi dalam membedakan fakta pencemaran sungai.</p>
+            
+            <div class="result-actions">
+              <button class="btn btn-outline" onclick="startQuiz()">Ulangi Kuis 🔄</button>
+              <button class="btn btn-primary" onclick="switchTab('tab-guru')">Lihat Rekap Nilai & Cetak Panduan 🖨️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 6: PANDUAN GURU & DOKUMEN CETAK ==================== -->
+    <section class="tab-pane" id="tab-guru">
+      <div class="pane-header">
+        <div class="pane-badge">RUANG KENDALI PENDIDIK • KURIKULUM MERDEKA</div>
+        <h2>Panduan Fasilitasi Guru & Perangkat Cetak</h2>
+        <p>Pedoman implementasi 3 pertemuan, diferensiasi belajar, mitigasi etika AI, serta modul dan LKPD siap cetak.</p>
+      </div>
+
+      <!-- Quick Action Print Buttons -->
+      <div class="print-actions-bar">
+        <div class="print-intro">
+          <strong>📦 Mode Offline & Siap Cetak (Printable Kit):</strong>
+          <p>Jika sekolah mengalami kendala proyektor atau internet, cetak instrumen berikut untuk pembelajaran berbasis kartu fisik.</p>
+        </div>
+        <div class="print-btn-cluster">
+          <button class="btn btn-print" onclick="window.print()">
+            🖨️ Cetak Seluruh Perangkat Media
+          </button>
+          <a href="#section-doc-lkpd" class="btn btn-outline">
+            📄 Lihat Draft LKPD 1-3
+          </a>
+          <a href="#section-doc-modul" class="btn btn-outline">
+            📘 Lihat Modul Ajar Lengkap
+          </a>
+        </div>
+      </div>
+
+      <!-- Panduan 3 Pertemuan -->
+      <div class="teacher-guide-grid">
+        <div class="guide-box">
+          <div class="guide-badge">PERTEMUAN 1 (2-3 JP)</div>
+          <h4>Misi 1: Mengamati & Mempertanyakan</h4>
+          <ul class="guide-steps">
+            <li><strong>00-10 mnt:</strong> Tayangkan visual komparasi sungai / putar narasi suara. Siswa merumuskan 3 rasa ingin tahu.</li>
+            <li><strong>10-35 mnt:</strong> Penyelidikan kelompok menggunakan 4 Kartu Bukti (Plastik, Detergen, Bioindikator Capung, Dampak Kesehatan).</li>
+            <li><strong>35-55 mnt:</strong> Guru memproyeksikan layar untuk sesi "Tanya AI Asisten". Siswa menguji jawaban AI terhadap buku siswa (Literasi Kritis).</li>
+            <li><strong>55-70 mnt:</strong> Refleksi dan kuis formatif cepat.</li>
+          </ul>
+        </div>
+
+        <div class="guide-box">
+          <div class="guide-badge">PERTEMUAN 2 (2-3 JP)</div>
+          <h4>Misi 2: Merencanakan & Memproses Data</h4>
+          <ul class="guide-steps">
+            <li><strong>00-15 mnt:</strong> Review temuan Misi 1. Guru memandu pemodelan Diagram Tulang Ikan (Fishbone).</li>
+            <li><strong>15-45 mnt:</strong> Brainstorming dengan AI: Menghasilkan 5 alternatif kampanye ramah anak. Kelompok memilih dan memodifikasi solusi.</li>
+            <li><strong>45-70 mnt:</strong> Penyusunan draf rancangan produk (Poster digital, poster gambar manual, atau skrip orasi 60 detik).</li>
+          </ul>
+        </div>
+
+        <div class="guide-box">
+          <div class="guide-badge">PERTEMUAN 3 (2-3 JP)</div>
+          <h4>Misi 3: Mengomunikasikan & Refleksi</h4>
+          <ul class="guide-steps">
+            <li><strong>00-20 mnt:</strong> Finalisasi produk poster atau rekaman suara orasi kampanye.</li>
+            <li><strong>20-55 mnt:</strong> "Gelar Karya Detektif": Setiap kelompok presentasi 3 menit. Kelompok lain menilai dengan Rubrik Sejawat.</li>
+            <li><strong>55-70 mnt:</strong> Refleksi filosofis etika AI: <em>"Apa yang dibantu AI? Apa yang harus tetap kita putuskan sendiri dengan nurani manusia?"</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dokumen Terstruktur Tersemat: Modul Ajar & LKPD -->
+      <div class="doc-viewer-card" id="section-doc-modul">
+        <div class="doc-viewer-header">
+          <div>
+            <span class="doc-tag">DOKUMEN MODUL AJAR KURIKULUM MERDEKA</span>
+            <h3>Modul Pembelajaran: "Detektif Lingkungan, Misi Sungai Bersih"</h3>
+            <small>Kelas VI SD • Fase C • Integrasi IPAS & Bahasa Indonesia</small>
+          </div>
+        </div>
+
+        <div class="doc-body printable-doc">
+          <h4>I. INFORMASI UMUM</h4>
+          <table class="doc-table">
+            <tr><td width="30%"><strong>Mata Pelajaran</strong></td><td>IPAS (Ilmu Pengetahuan Alam & Sosial) diintegrasikan dengan Bahasa Indonesia</td></tr>
+            <tr><td><strong>Fase / Kelas</strong></td><td>Fase C / Kelas VI (Enam) SD</td></tr>
+            <tr><td><strong>Alokasi Waktu</strong></td><td>3 Pertemuan (6 - 8 JP @ 35 Menit)</td></tr>
+            <tr><td><strong>Model Pembelajaran</strong></td><td>Project-Based Learning (PjBL) terintegrasi Inquiry & AI-Assisted Learning</td></tr>
+            <tr><td><strong>Profil Pelajar Pancasila</strong></td><td>Bernalar Kritis, Kreatif, Gotong Royong, Berakhlak Mulia (Peduli Lingkungan)</td></tr>
+          </table>
+
+          <h4>II. CAPAIAN PEMBELAJARAN (CP) & TUJUAN PEMBELAJARAN</h4>
+          <ul>
+            <li><strong>IPAS (Pemahaman):</strong> Peserta didik mengidentifikasi komponen ekosistem dan interaksinya, serta menganalisis dampak aktivitas manusia terhadap lingkungan perairan sungai.</li>
+            <li><strong>IPAS (Keterampilan Proses):</strong> Mengamati fenomena, mempertanyakan, merencanakan penyelidikan, memproses data sebab-akibat, mengevaluasi fakta, dan mengomunikasikan solusi.</li>
+            <li><strong>Bahasa Indonesia:</strong> Menyimak informasi multimedia, membaca kritis teks laporan kasus, serta menulis teks persuasif/slogan kampanye dan mempresentasikannya secara visual.</li>
+          </ul>
+
+          <h4>III. LANDASAN TEORETIS & PEDAGOGIS</h4>
+          <ol>
+            <li><strong>Cognitive Theory of Multimedia Learning (Richard Mayer):</strong> Menggunakan prinsip <em>Modality</em> (teks visual didukung narasi audio), <em>Coherence</em> (menghilangkan elemen pengganggu agar memori kerja anak fokus), dan <em>Segmenting</em> (pembelajaran dibagi menjadi 3 misi bertahap).</li>
+            <li><strong>Teori Kognitif Jean Piaget:</strong> Karakteristik usia 11-12 tahun berada pada masa transisi konkret ke formal awal. Dimulai dari fenomena nyata yang dapat diamati (sampah di selokan sekitar sekolah), lalu diarahkan ke abstraksi sebab-akibat logis.</li>
+            <li><strong>Scaffolding & ZPD (Lev Vygotsky):</strong> AI bertindak sebagai alat perancah (<em>scaffold</em>) untuk memantik ide, bukan pengganti proses berpikir. Diskusi kelompok terarah memfasilitasi interaksi sosial teman sebaya.</li>
+            <li><strong>Model TPACK & SAMR:</strong> Pemanfaatan AI bukan sekadar substitusi buku, melainkan <em>Modification</em> dan <em>Redefinition</em> di mana siswa berlatih menjadi kurator kritis data AI.</li>
+          </ol>
+
+          <h4>IV. MITIGASI ETIKA & KEAMANAN AI UNTUK ANAK SD</h4>
+          <ul>
+            <li><strong>Privasi Data Anak:</strong> Siswa tidak membuat akun atau memasukkan data pribadi ke AI. Seluruh interaksi dipandu guru melalui proyektor / platform tertutup ini.</li>
+            <li><strong>Mencegah Ketergantungan Jawaban Instan:</strong> AI ditempatkan pada fase pemantik pertanyaan dan perbendaharaan ide. Siswa wajib memverifikasi kebenaran fakta menggunakan buku siswa.</li>
+            <li><strong>Inklusivitas & Hambatan Layar:</strong> Media dirancang responsif, hemat bandwidth, mendukung Text-to-Speech untuk anak lambat membaca, dan 100% dapat dicetak untuk mode luring (offline).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LKPD Cetak -->
+      <div class="doc-viewer-card" id="section-doc-lkpd">
+        <div class="doc-viewer-header">
+          <div>
+            <span class="doc-tag">LEMBAR KERJA PESERTA DIDIK (LKPD)</span>
+            <h3>Buku Kerja Detektif Cilik (Siap Cetak)</h3>
+          </div>
+        </div>
+        <div class="doc-body printable-doc">
+          <div class="lkpd-box">
+            <div class="lkpd-title">LKPD MISI 1: PENYELIDIKAN BUKTI KASUS</div>
+            <p><strong>Nama Detektif:</strong> <span id="lkpd-detective-name" style="color: #0f766e; font-weight: 800;">Detektif Cilik</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Regu Tim:</strong> <span id="lkpd-detective-team" style="color: #0284c7; font-weight: 700;">🦅 Tim Elang Air</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Kelas:</strong> VI SD</p>
+            <p><strong>Anggota Tim:</strong> 1. ______________ 2. ______________ 3. ______________ 4. ______________</p>
+            <hr>
+            <p><strong>Tugas 1:</strong> Catat 3 benda asing yang paling merusak ekosistem sungai berdasarkan hasil pengamatan gambar dan kartu kasus!</p>
+            <div class="blank-lines">1. ________________________________________________________________<br>2. ________________________________________________________________<br>3. ________________________________________________________________</div>
+            <p><strong>Tugas 2:</strong> Uji Jawaban AI Detektif Tirta! Apa pertanyaan yang kelompokmu ajukan ke AI? Apakah jawabannya benar menurut buku pelajaran? Berikan alasan!</p>
+            <div class="blank-lines">Pertanyaan ke AI: __________________________________________________<br>Hasil Verifikasi: [ &nbsp; ] Sesuai Fakta &nbsp;&nbsp;&nbsp; [ &nbsp; ] Perlu Dikoreksi<br>Catatan Kelompok: __________________________________________________</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal / Floating Info Box for Fishbone Bones -->
+  <div class="modal-backdrop" id="bone-modal" onclick="closeBoneModal()">
+    <div class="modal-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h4 id="modal-bone-title">Analisis Tulang Ikan</h4>
+        <button class="modal-close" onclick="closeBoneModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-bone-content">
+        Konten analisis...
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="closeBoneModal()">Paham, Kembali ke Diagram</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <strong>Detektif Lingkungan: Misi Sungai Bersih</strong>
+        <p>Inovasi Media Pembelajaran IPAS & Bahasa Indonesia Fase C Kelas VI SD Berbasis AI Tepat Guna.</p>
+      </div>
+      <div class="footer-copy">
+        Dikembangkan dengan prinsip TPACK, Mayer Multimedia, & Nalar Kritis Kurikulum Merdeka.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
